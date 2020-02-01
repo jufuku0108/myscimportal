@@ -1,0 +1,20 @@
+<mat-sidenav-container>
+
+  <mat-sidenav #sidenav role="navigation">
+    <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-headernav-list (sidenavToggle)="sidenav.toggle()"></app-headernav-list>
+    <mat-progress-bar [mode]="progressbarMode" [color]="progressbarColor" *ngIf="progressbarOn"></mat-progress-bar>
+
+    <main role="main">
+        <div fxLayout="row wrap" fxLayoutAlign="center center" class="layout-wrapper">
+            <div fxFlex="88" fxFlex.lt-md="80%" class="flex-wrapper">
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+    </main>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

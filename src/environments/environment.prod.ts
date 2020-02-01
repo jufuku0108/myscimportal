@@ -1,3 +1,9 @@
 export const environment = {
-  production: true
+  production: true,
+  // endPoint: '************************',
+  // clientId: '************************',
+  // myHost: '************************'
+  endPoint: '************************',
+  clientId: '************************',
+  myHost: '************************'
 };

@@ -1,0 +1,17 @@
+.accessToken {
+  word-wrap: break-word;
+}
+.idToken {
+  word-wrap: break-word;
+}
+.headerImage {
+  background-image: url(../../../assets/images/km192212679901103202301.jpg);
+  background-size: cover;
+}
+a {
+  word-wrap: break-word;
+}
+p {
+  word-wrap: break-word;
+  max-width: 650px;
+}

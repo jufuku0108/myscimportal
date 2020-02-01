@@ -1,0 +1,19 @@
+  <mat-form-field>
+    <mat-label>Method</mat-label>
+    <select name="selectMethod" #selectMethod matNativeControl>
+      <option value="Get">Get</option>
+      <option value="Post">Post</option>
+      <option value="Patch">Patch</option>
+      <option value="Delete">Delete</option>
+    </select>
+  </mat-form-field>
+
+  <mat-form-field class="urlForm">
+    <input name="urlForm" #urlForm matInput type="url" placeholder="Url" [value]="endPoint" spellcheck="false">
+  </mat-form-field>
+
+  <button mat-button color="primary" (click)="startCustomMethod(selectMethod.value, urlForm.value, bodyForm.value)">Go</button>
+
+<textarea name="bodyForm" #bodyForm class="bodyForm" matInput placeholder="Body" spellcheck="false"></textarea>
+
+<ngx-json-viewer [json]="jsonData"></ngx-json-viewer>
