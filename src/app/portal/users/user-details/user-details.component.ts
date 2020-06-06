@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../user';
 import { HttpclientService } from 'src/app/services/httpclient.service';
-import { environment } from '../../../../environments/environment.prod';
+import { environment } from '../../../../environments/environment';
 import { DatasharingService } from 'src/app/services/datasharing.service';
 
 @Component({

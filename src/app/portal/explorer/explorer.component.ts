@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { environment } from '../../../environments/environment.prod';
+import { environment } from '../../../environments/environment';
 import { HttpclientService } from 'src/app/services/httpclient.service';
 import { DatasharingService } from 'src/app/services/datasharing.service';
 
@@ -11,7 +11,7 @@ import { DatasharingService } from 'src/app/services/datasharing.service';
 })
 export class ExplorerComponent implements OnInit {
   jsonData: any;
-  endPoint = environment.endPoint + '/v2/authenticationcode';
+  endPoint = environment.endPoint + '/v2/users';
   constructor(private httpclientService: HttpclientService,
               private dataSharingService: DatasharingService) { }
 
@@ -20,7 +20,7 @@ export class ExplorerComponent implements OnInit {
     // this.startCustomMethod('Get', this.endPoint, null);
   }
   startCustomMethod(method: string, url: string, body: any) {
-    this.dataSharingService.setProgressBarState(true);
+    // this.dataSharingService.setProgressBarState(true);
 
     switch (method) {
       case 'Get': {
@@ -99,5 +99,20 @@ export class ExplorerComponent implements OnInit {
         }
       );
   }
-
+  getCode() {
+    const codePoint = environment.endPoint + '/v2/authenticationcode';
+    this.postData(codePoint, '');
+  }
+  getUsers() {
+    const userPoint = environment.endPoint + '/v2/users';
+    this.getData(userPoint);
+  }
+  getGroups() {
+    const groupPoint = environment.endPoint + '/v2/groups';
+    this.getData(groupPoint);
+  }
+  flushLogs() {
+    const logPoint = environment.endPoint + '/v2/accesslogs';
+    this.deleteData(logPoint);
+  }
 }

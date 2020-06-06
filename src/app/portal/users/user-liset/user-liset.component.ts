@@ -3,7 +3,7 @@ import { User } from '../user';
 import { MatTableDataSource, MatSortHeader, MatSort, MatPaginator } from '@angular/material';
 import { Router } from '@angular/router';
 import { HttpclientService } from 'src/app/services/httpclient.service';
-import { environment } from '../../../../environments/environment.prod';
+import { environment } from '../../../../environments/environment';
 import { DatasharingService } from 'src/app/services/datasharing.service';
 
 

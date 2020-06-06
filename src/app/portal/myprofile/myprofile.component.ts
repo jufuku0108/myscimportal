@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'oidc-client';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-myprofile',
@@ -9,9 +10,11 @@ import { User } from 'oidc-client';
 })
 export class MyprofileComponent implements OnInit {
   user: User;
+  manageUrl: string;
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.manageUrl = environment.endPoint + environment.managePage;
     this.getMyProfile();
   }
   getMyProfile() {

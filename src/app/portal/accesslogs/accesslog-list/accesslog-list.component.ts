@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit  } from '@angular/core';
 import { Accesslog } from '../accesslog';
 import { HttpclientService } from 'src/app/services/httpclient.service';
-import { environment } from '../../../../environments/environment.prod';
+import { environment } from '../../../../environments/environment';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { DatasharingService } from 'src/app/services/datasharing.service';
