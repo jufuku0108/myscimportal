@@ -1,0 +1,58 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+  <mat-card fxFlex="700px" fxFlex.xs="100%">
+    <mat-card-content>
+      <div fxLayout="column wrap" fxLayoutGap="10px">
+
+        <div fxLayout="row wrap" fxFlex>
+            <div fxFlex><strong>Id:</strong></div>
+            <div fxFlex>{{group?.id}}</div>
+        </div>
+
+        <div fxLayout="row wrap" fxFlex>
+            <div fxFlex><strong>ExternalId:</strong></div>
+            <div fxFlex>{{group?.externalId}}</div>
+        </div>
+
+        <div fxLayout="row wrap" fxFlex>
+            <div fxFlex><strong>DisplayName:</strong></div>
+            <div fxFlex>{{group?.displayName}}</div>
+        </div>
+
+        <div fxLayout="row wrap" fxFlex>
+            <div fxFlex><strong>Schemas:</strong></div>
+            <div fxFlex>{{group?.schemas}}</div>
+        </div>
+
+
+      </div>
+    </mat-card-content>
+
+    <mat-expansion-panel *ngFor="let item of group?.members;">
+      <mat-expansion-panel-header>
+        <mat-panel-title>Member</mat-panel-title><mat-panel-description>Member Information</mat-panel-description>
+      </mat-expansion-panel-header>
+      <div fxLayout="row wrap" fxLayoutAlign="center center">
+        <div fxFlex="100%" class="text-color"><strong>value:</strong>&nbsp;{{item.value}}</div>
+        <div fxFlex="100%" class="text-color"><strong>$ref:</strong>&nbsp;{{item.$ref}}</div>
+        <div fxFlex="100%" class="text-color"><strong>display:</strong>&nbsp;{{item.display}}</div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Meta</mat-panel-title><mat-panel-description>Meta</mat-panel-description>
+      </mat-expansion-panel-header>
+      <div fxLayout="row wrap" fxLayoutAlign="center center">
+          <div fxFlex="100%" class="text-color"><strong>resourceType:</strong>&nbsp;{{group?.meta.resourceType}}</div>
+          <div fxFlex="100%" class="text-color"><strong>created:</strong>&nbsp;{{group?.meta.created}}</div>
+          <div fxFlex="100%" class="text-color"><strong>lastModified:</strong>&nbsp;{{group?.meta.lastModified}}</div>
+          <div fxFlex="100%" class="text-color"><strong>location:</strong>&nbsp;{{group?.meta.location}}</div>
+          <div fxFlex="100%" class="text-color"><strong>version:</strong>&nbsp;{{group?.meta.version}}</div>
+      </div>
+      </mat-expansion-panel>
+
+    </mat-card>
+
+
+
+</section>

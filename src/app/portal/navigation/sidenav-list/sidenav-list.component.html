@@ -1,0 +1,22 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="/portal/myprofile" (click)="onSidenavClose()">
+      <mat-icon>account_circle</mat-icon> <span class="nav-caption">MyProfile</span>
+  </a>
+
+  <a mat-list-item routerLink="/portal/users" (click)="onSidenavClose()">
+    <mat-icon>group</mat-icon> <span class="nav-caption">Users</span>
+  </a>
+
+  <a mat-list-item routerLink="/portal/groups" (click)="onSidenavClose()">
+      <mat-icon>account_balance</mat-icon><span class="nav-caption">Groups</span>
+  </a>
+
+  <a mat-list-item routerLink="/portal/explorer" (click)="onSidenavClose()">
+    <mat-icon>find_replace</mat-icon><span class="nav-caption">Explorer</span>
+  </a>
+
+  <a mat-list-item routerLink="/portal/accesslogs" (click)="onSidenavClose()">
+    <mat-icon> show_chart</mat-icon><span class="nav-caption">Accesslogs</span>
+  </a>
+
+</mat-nav-list>

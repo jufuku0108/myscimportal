@@ -1,0 +1,63 @@
+<div fxLayout fxLayoutAlign="center center">
+  <mat-form-field fxFlex="40%">
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter" spellcheck="false">
+  </mat-form-field>
+</div>
+
+<table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort>
+
+  <ng-container matColumnDef="dateTime">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>DateTime</th>
+    <td mat-cell *matCellDef="let element">{{element.dateTime | date: 'yyyy/MM/dd HH:mm:ss'}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+      <td mat-cell *matCellDef="let element">{{element.type}}</td>
+
+  </ng-container>
+
+  <ng-container matColumnDef="httpMethod">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>HttpMethod</th>
+      <td mat-cell *matCellDef="let element">{{element.httpMethod}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="statusCode">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>DtatusCode</th>
+    <td mat-cell *matCellDef="let element">{{element.statusCode}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="absoluteUrl">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>AbsoluteUrl</th>
+    <td mat-cell *matCellDef="let element">{{element.absoluteUrl}}</td>
+  </ng-container>
+
+  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+  <ng-container matColumnDef="expandedDetail">
+    <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+      <div class="example-element-detail"
+           [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+        <div class="example-element-description">
+          <strong>Headers</strong><br>
+          {{element.headers}}
+          <br>
+          <strong>Body</strong><br>
+          {{element.body}}
+        </div>
+      </div>
+    </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+      class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandedElement = expandedElement === element ? null : element">
+  </tr>
+  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+
+</table>
+
+<mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 15, 20, 25, 30]">
+</mat-paginator>

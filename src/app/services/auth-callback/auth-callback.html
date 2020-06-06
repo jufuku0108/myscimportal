@@ -1,0 +1,14 @@
+<!doctype html>
+<head>
+  <title>Auth-Callback</title>
+  <script src="oidc-client.min.js">
+    new UserManager().signinRedirectCallback()
+      .catch(errorResponse => {
+        console.log('Error')
+      });
+      window.location.href = localStorage.getItem('savedRoute');
+  </script>
+</head>
+<body>
+</body>
+</html>

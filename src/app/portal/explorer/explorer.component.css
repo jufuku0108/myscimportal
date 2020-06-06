@@ -1,0 +1,20 @@
+.urlForm {
+  width: 75%;
+}
+
+.bodyForm {
+  height: 150px;
+  border: 1px solid #bebdbd;
+  border-radius: 0.43em;
+}
+.getusers {
+  margin-left: 10px;
+}
+
+.getgroups {
+  margin-left: 10px;
+}
+
+.flushlog {
+  margin-left: 10px;
+}

@@ -1,0 +1,59 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+
+  <mat-card fxFlex="700px" fxFlex.xs="100%">
+    <mat-card-header>
+      <div mat-card-avatar class="headerImage"></div>
+      <mat-card-title>{{user?.profile?.name}}</mat-card-title>
+      <mat-card-subtitle>{{user?.profile?.sub}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+      <div fxLayout="row wrap" fxLayoutGap="10px">
+        <div>
+          <a href="{{manageUrl}}" target="_blank">Manage my account</a>
+        </div>
+        <br><br>
+        <div fxLayout="column wrap" fxFlex class="accessToken">
+            <div fxFlex><strong>Access Token</strong></div>
+            <p fxFlex>{{user?.access_token}}</p>
+        </div>
+
+        <div fxLayout="column wrap" fxFlex class="idToken">
+          <div fxFlex><strong>Id Token</strong></div>
+          <p fxFlex>{{user?.id_token}}</p>
+        </div>
+
+        <div fxLayout="column wrap" fxFlex>
+          <div fxFlex><strong>Auth Time</strong></div>
+          <p fxFlex>{{user?.profile?.auth_time}}</p>
+        </div>
+
+        <div fxLayout="column wrap" fxFlex>
+          <div fxFlex><strong>Expired In</strong></div>
+          <p fxFlex>{{user?.expires_in}}</p>
+        </div>
+
+        <div fxLayout="column wrap" fxFlex>
+          <div fxFlex><strong>Expired At</strong></div>
+          <p fxFlex>{{user?.expires_at}}</p>
+        </div>
+
+        <div fxLayout="column wrap" fxFlex>
+          <div fxFlex><strong>Scopes</strong></div>
+          <p fxFlex>{{user?.scopes}}</p>
+        </div>
+
+        <div fxLayout="column wrap" fxFlex>
+          <div fxFlex><strong>Idp</strong></div>
+          <p fxFlex>{{user?.profile?.idp}}</p>
+        </div>
+
+
+      </div>
+    </mat-card-content>
+
+    </mat-card>
+
+
+
+</section>
