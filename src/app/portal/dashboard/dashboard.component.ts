@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit} from '@angular/core';
 import { HttpclientService } from 'src/app/services/httpclient.service';
-import { environment } from '../../../environments/environment.prod';
+import { environment } from '../../../environments/environment';
 import { Statistics } from './statistics';
 import { formatDate, DatePipe } from '@angular/common';
 

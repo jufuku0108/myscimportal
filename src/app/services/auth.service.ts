@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserManager, UserManagerSettings, User, Log } from 'oidc-client'; Log.logger = console; Log.level = Log.DEBUG;
 import { Router } from '@angular/router';
-import { environment } from '../../environments/environment.prod';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'

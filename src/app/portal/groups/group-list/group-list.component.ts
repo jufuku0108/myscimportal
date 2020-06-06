@@ -2,7 +2,7 @@ import { MatTableDataSource, MatSortHeader, MatSort } from '@angular/material';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Group } from '../group';
 import { HttpclientService } from 'src/app/services/httpclient.service';
-import { environment } from '../../../../environments/environment.prod';
+import { environment } from '../../../../environments/environment';
 import { Router } from '@angular/router';
 import { DatasharingService } from 'src/app/services/datasharing.service';
 
