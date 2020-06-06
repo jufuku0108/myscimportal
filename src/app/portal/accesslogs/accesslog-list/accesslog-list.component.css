@@ -1,0 +1,107 @@
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: rgb(224, 223, 223);
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+  word-break: break-all;
+  width: 1200px;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
+}
+
+/* .mat-table {
+  width: auto;
+  margin-right: auto;
+  margin-left: auto;
+} */
+
+.mat-column-dateTime {
+  white-space: unset !important;
+  flex: 0 0 100px !important;
+  width: 100px !important;
+  overflow-wrap: break-word;
+
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  /* Instead use this non-standard one: */
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-type {
+  padding-left: 10px;
+  width: 15%;
+}
+.httpMethod {
+  padding-left: 10px;
+  width: 15%;
+}
+.statusCode {
+  width: 15%;
+}
+.mat-column-absoluteUrl {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 100px !important;
+  width: 700px !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  /* Instead use this non-standard one: */
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-break: break-all;
+}
+.mat-paginator-container {
+  width: auto;
+}

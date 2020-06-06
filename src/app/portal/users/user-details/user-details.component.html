@@ -1,0 +1,86 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+  <mat-card fxFlex="700px" fxFlex.xs="100%">
+    <mat-card-header>
+      <div mat-card-avatar class="headerImage"></div>
+      <mat-card-title>{{user?.userName}}</mat-card-title>
+      <mat-card-subtitle>{{user?.id}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div fxLayout="column wrap" fxLayoutGap="10px">
+
+        <div fxLayout="row wrap" fxFlex>
+            <div fxFlex><strong>ExternalId:</strong></div>
+            <div fxFlex>{{user?.externalId}}</div>
+        </div>
+
+        <div fxLayout="row wrap" fxFlex>
+            <div fxFlex><strong>Active:</strong></div>
+            <div fxFlex>{{user?.active}}</div>
+        </div>
+
+        <div fxLayout="row wrap" fxFlex>
+            <div fxFlex><strong>DisplayName:</strong></div>
+            <div fxFlex>{{user?.displayName}}</div>
+        </div>
+
+        <div fxLayout="row wrap" fxFlex>
+            <div fxFlex><strong>Schemas:</strong></div>
+            <div fxFlex>{{user?.schemas}}</div>
+        </div>
+
+      </div>
+    </mat-card-content>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Name</mat-panel-title><mat-panel-description>Name</mat-panel-description>
+      </mat-expansion-panel-header>
+      <div fxLayout="row wrap" fxLayoutAlign="center center">
+          <div fxFlex="100%" class="text-color"><strong>formatted:</strong>&nbsp;{{user?.name.formatted}}</div>
+          <div fxFlex="100%" class="text-color"><strong>familyName:</strong>&nbsp;{{user?.name.familyName}}</div>
+          <div fxFlex="100%" class="text-color"><strong>givenName:</strong>&nbsp;{{user?.name.givenName}}</div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let item of user?.emails;">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Email</mat-panel-title><mat-panel-description>Email Address</mat-panel-description>
+          </mat-expansion-panel-header>
+          <div fxLayout="row wrap" fxLayoutAlign="center center">
+            <div fxFlex="100%" class="text-color"><strong>type:</strong>&nbsp;{{item.type}}</div>
+            <div fxFlex="100%" class="text-color"><strong>value:</strong>&nbsp;{{item.value}}</div>
+            <div fxFlex="100%" class="text-color"><strong>primary:</strong>&nbsp;{{item.primary}}</div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+          <mat-expansion-panel *ngFor="let item of user?.phoneNumbers;">
+            <mat-expansion-panel-header>
+              <mat-panel-title>Phone</mat-panel-title><mat-panel-description>Phone Number</mat-panel-description>
+            </mat-expansion-panel-header>
+            <div fxLayout="row wrap" fxLayoutAlign="center center">
+              <div fxFlex="35%" class="text-color"><strong>type:</strong>&nbsp;{{item.type}}</div>
+              <div fxFlex class="text-color"><strong>value:</strong>&nbsp;{{item.value}}</div>
+
+            </div>
+         </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Meta</mat-panel-title><mat-panel-description>Meta</mat-panel-description>
+        </mat-expansion-panel-header>
+        <div fxLayout="row wrap" fxLayoutAlign="center center">
+            <div fxFlex="100%" class="text-color"><strong>resourceType:</strong>&nbsp;{{user?.meta.resourceType}}</div>
+            <div fxFlex="100%" class="text-color"><strong>created:</strong>&nbsp;{{user?.meta.created}}</div>
+            <div fxFlex="100%" class="text-color"><strong>lastModified:</strong>&nbsp;{{user?.meta.lastModified}}</div>
+            <div fxFlex="100%" class="text-color"><strong>location:</strong>&nbsp;{{user?.meta.location}}</div>
+            <div fxFlex="100%" class="text-color"><strong>version:</strong>&nbsp;{{user?.meta.version}}</div>
+        </div>
+      </mat-expansion-panel>
+
+
+    </mat-card>
+</section>
